@@ -11,12 +11,93 @@
 </head>
 <body>
     <!-- inline javascript -->
-    <button type="button" onclick="console.log('4')">Click me</button>
-    
+    <button type="button" onclick="console.log('4')">Console log 4</button>
     <!-- external javascript -->
-    <button type="button" onclick="fizzBuzz(15)">Click me</button>
+    <button type="button" onclick="fizzBuzz(15)">FizzBuzz</button>
     
-    <!-- Check map function -->
+    <!-- Div container for countdown loop exercise -->
+    <div class="output">
+        <h1>1)Countdown exercise</h1>
+    </div>
+    <script>
+        let output = document.querySelector('.output');
+
+        for(let i=10; i>=0; i--){
+            const para = document.createElement('p');
+            if(i===10){
+                para.textContent = `Countdown ${i}`;
+            }else if(i!==0){
+                para.textContent = i;
+            }else{
+                para.textContent = "Blast OFF!";
+            }
+            output.appendChild(para);
+        }
+    </script>
+
+    <!-- Div container for filling in a guest list -->
+    <!-- first method -->
+    <div class="outputNew">
+        <h1>2)Fill in a guest list exercise</h1>
+        <div class="admitted"></div>
+        <div class="refused"></div>
+    </div>
+    <!-- <script>
+        const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+
+        function checkPeople(value){
+            if(value === "Phil" || value === "Lola"){
+                return true;
+            } 
+            return false;
+        }
+
+        function checkAdmitted(value){
+            if(value !== "Phil" && value !== "Lola"){
+                return true;
+            } 
+            return false;
+        }
+
+        const admitted = document.querySelector('.admitted');
+        const refused = document.querySelector('.refused');
+        
+        const refusedArray = people.filter((person)=>checkPeople(person));
+        const admittedArray = people.filter((person)=>checkAdmitted(person));
+
+        admitted.textContent = 'Admit: ';
+        refused.textContent = 'Refuse: ';
+
+        refused.textContent += refusedArray.join(", ");
+        admitted.textContent += admittedArray.join(", ");
+    </script> -->
+    <!-- 2nd method -->
+    <script>
+        const people = ['Chris', 'Anne', 'Colin', 'Terri', 'Phil', 'Lola', 'Sam', 'Kay', 'Bruce'];
+
+        const admitted = document.querySelector('.admitted');
+        const refused = document.querySelector('.refused');
+        
+        const admittedArray = [];
+        const refusedArray = [];
+        
+        admitted.textContent = 'Admit: ';
+        refused.textContent = 'Refuse: ';
+
+        for(let i=0; i<people.length; i++){
+            if(people[i] === "Phil" || people[i] === "Lola"){
+                refusedArray.push(people.slice(i, i+1));
+            } else{
+                admittedArray.push(people.slice(i, i+1));
+            }
+        }
+
+        refused.textContent += refusedArray.join(", ");
+        admitted.textContent += admittedArray.join(", ");
+        
+    </script>
+
+    <!-- Check map function if it creates a new array-->
     <script>
         const cats = ['Leopard', 'Serval', 'Jaguar', 'Tiger', 'Caracal', 'Lion'];
   
