@@ -4,10 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- embedded javascript -->
+    <script>console.log("hello")</script>
     <script type="text/javascript" src="javascript.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <button type="button" onclick="lastLetter('wordsa')">Click me</button>
+    <!-- inline javascript -->
+    <button type="button" onclick="console.log('4')">Click me</button>
+    
+    <!-- external javascript -->
+    <button type="button" onclick="fizzBuzz(15)">Click me</button>
+    
+    <!-- Check map function -->
+    <script>
+        const cats = ['Leopard', 'Serval', 'Jaguar', 'Tiger', 'Caracal', 'Lion'];
+  
+        const upperCats = cats.map(toUpper);
+  
+        console.log(cats.map(toUpper))
+        console.log(upperCats);
+        console.log(cats);
+    </script>
 </body>
 </html>
